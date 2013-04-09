@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
+    </dependencies>
+    <scenes>
+        <!--Guess Num View Controller-->
+        <scene sceneID="5">
+            <objects>
+                <viewController id="2" customClass="GuessNumViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="3" customClass="UIControl">
+                        <rect key="frame" x="0.0" y="20" width="320" height="548"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sb8-g4-OhL">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="W6i-L0-6C9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="XX比?大" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GxB-ok-ZaH">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Zhs-1U-lQQ"/>
+                                    <constraint firstAttribute="width" constant="83" id="cbE-6G-EDL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="输入猜测数字：" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rQB-qm-Pha">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="19" id="EYv-eD-QMN"/>
+                                    <constraint firstAttribute="width" constant="131" id="wbC-AR-ZY5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="K9O-Bf-o2y">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="55" id="R0H-Xn-lGo"/>
+                                    <constraint firstAttribute="height" constant="30" id="gIk-Eh-YKe"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="2" id="9vq-Fv-e0o"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nHf-El-L5D">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="73" id="89U-hf-yh7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="猜一猜">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="guessNow:" destination="2" eventType="touchUpInside" id="xdQ-lA-MuT"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QMx-ql-lv2">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="再来一局">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="guessAgain:" destination="2" eventType="touchUpInside" id="1CO-3D-N4w"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="GxB-ok-ZaH" firstAttribute="centerX" secondItem="Sb8-g4-OhL" secondAttribute="centerX" type="default" id="6cg-Z5-Mpy"/>
+                            <constraint firstItem="nHf-El-L5D" firstAttribute="leading" secondItem="Sb8-g4-OhL" secondAttribute="leading" type="default" id="7Yi-Dt-zJV"/>
+                            <constraint firstItem="rQB-qm-Pha" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="44" id="B80-ly-Vn2"/>
+                            <constraint firstItem="QMx-ql-lv2" firstAttribute="leading" secondItem="nHf-El-L5D" secondAttribute="leading" type="default" id="CEz-Fy-7Jq"/>
+                            <constraint firstAttribute="trailing" secondItem="K9O-Bf-o2y" secondAttribute="trailing" constant="74" id="CmY-RK-9sK"/>
+                            <constraint firstItem="Sb8-g4-OhL" firstAttribute="top" secondItem="3" secondAttribute="top" constant="69" id="DC3-rb-ONW"/>
+                            <constraint firstItem="GxB-ok-ZaH" firstAttribute="top" secondItem="3" secondAttribute="top" constant="142" id="Eny-Jm-5GE"/>
+                            <constraint firstItem="rQB-qm-Pha" firstAttribute="top" secondItem="K9O-Bf-o2y" secondAttribute="top" type="default" id="K6A-Yk-3aR"/>
+                            <constraint firstItem="nHf-El-L5D" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="123" id="W0J-u7-Lcu"/>
+                            <constraint firstItem="rQB-qm-Pha" firstAttribute="top" secondItem="3" secondAttribute="top" constant="233" id="Zgy-dT-eDF"/>
+                            <constraint firstItem="GxB-ok-ZaH" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="aFh-rI-QGS"/>
+                            <constraint firstItem="rQB-qm-Pha" firstAttribute="baseline" secondItem="K9O-Bf-o2y" secondAttribute="baseline" type="default" id="mS7-jt-2eI"/>
+                            <constraint firstItem="QMx-ql-lv2" firstAttribute="top" secondItem="nHf-El-L5D" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="qPk-Xn-ryi"/>
+                            <constraint firstAttribute="bottom" secondItem="QMx-ql-lv2" secondAttribute="bottom" constant="52" id="vk7-8e-rPm"/>
+                            <constraint firstItem="nHf-El-L5D" firstAttribute="trailing" secondItem="QMx-ql-lv2" secondAttribute="trailing" type="default" id="yhT-0G-hVM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="guessHint" destination="GxB-ok-ZaH" id="vqM-qR-klF"/>
+                        <outlet property="guessNum" destination="K9O-Bf-o2y" id="vpI-YS-yO5"/>
+                        <outlet property="guessResult" destination="Sb8-g4-OhL" id="pJd-tH-fjJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
+    </simulatedMetricsContainer>
+</document>
